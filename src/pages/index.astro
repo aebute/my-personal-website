@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+
+const skills = [
+  "JavaScript", "TypeScript", "React", "Node.js", "Angular", 
+  "Python", "Django", "Java", "Spring", "MySQL", 
+  "PostgreSQL", "MongoDB", "AWS", "Docker", "Git"
+];
+
+const projects = [
+  {
+    title: "AuraCore Software Solutions",
+    description: "Founding ongoing software architecture and digital automation enterprise delivering scalable full-stack applications.",
+    tags: ["Full-Stack", "Architecture", "Automation"],
+  },
+  {
+    title: "NIMC Enrollment Platform",
+    description: "Designed and built an enrollment application during tech support engineering engagements at Interra Networks.",
+    tags: ["Java", "Database Design", "Enrollment System"],
+  },
+  {
+    title: "Software Solutions Engineering",
+    description: "Ongoing core engineering relationship delivering custom software solutions for client enterprises.",
+    tags: ["Python", "Django", "Node.js", "PostgreSQL"],
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ameh Ebute | Full-Stack Developer & DPO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <header class="header">
+      <div class="container nav-container">
+        <a href="#" class="logo">Ameh Ebute</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Hero Section -->
+      <section id="about" class="hero">
+        <div class="hero-content">
+          <h1>Building <span>secure, performant</span> software & digital infrastructure.</h1>
+          <p>
+            Full-Stack Software Developer & Certified Data Protection Officer based in Abuja, Nigeria. 
+            Specializing in building robust web applications, enterprise platforms, and compliant digital solutions.
+          </p>
+          <a href="#projects" class="cta-button">View Selected Work</a>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="project-tags" style="gap: 0.75rem; max-width: 800px;">
+          {skills.map((skill) => (
+            <span class="tag" style="font-size: 0.95rem; padding: 0.4rem 0.8rem;">{skill}</span>
+          ))}
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2 class="section-title">Featured Work & Engagements</h2>
+        <div class="projects-grid">
+          {projects.map((project) => (
+            <div class="project-card">
+              <div class="project-image"></div>
+              <div class="project-info">
+                <h3 class="project-title">{project.title}</h3>
+                <p class="project-description">{project.description}</p>
+                <div class="project-tags">
+                  {project.tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="container">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Let's Connect</h2>
+        <p style="margin-bottom: 1.5rem;">Abuja, Nigeria &bull; Certified Data Protection Officer</p>
+        <p>&copy; {new Date().getFullYear()} Ameh Ebute. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
